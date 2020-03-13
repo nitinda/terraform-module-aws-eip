@@ -1,4 +1,4 @@
-resource "aws_nat_gateway" "nat_gateway" {
+resource "aws_eip" "eip" {
   vpc                       = var.vpc
   instance                  = var.instance
   network_interface         = var.network_interface
