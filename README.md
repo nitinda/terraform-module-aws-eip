@@ -97,11 +97,11 @@ _The variables required in order for the module to be successfully called from t
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
 |:----|:----|-----:|:---:|
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
+| **_vpc_** | _Boolean if the EIP is in a VPC or not_ | _string_ | **_Optional <br/> (Default - true)_** |
+| **_instance_** | _EC2 instance ID_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_network\_interface_** | _Network interface ID to associate with_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_associate\_with\_private\_ip_** | _A user specified primary or secondary private <br/> IP address to associate with the Elastic IP address_ | _string_ | **_Optional <br/> (Default - null)_** |
+| **_public\_ipv4\_pool_** | _EC2 IPv4 address pool identifier or amazon_ | _string_ | **_Required_** |
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
 
 
