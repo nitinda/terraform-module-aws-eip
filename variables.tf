@@ -26,5 +26,5 @@ variable "associate_with_private_ip" {
 
 variable "public_ipv4_pool" {
   description = "EC2 IPv4 address pool identifier or amazon"
-  default     = null
+  default     = "amazon"
 }
