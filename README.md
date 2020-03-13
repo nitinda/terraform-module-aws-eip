@@ -48,12 +48,13 @@ _To use this module, add the following call to your code:_
 - **_Sample Code:_**
 
 ```tf
-module "vpc_nat_gateway" {
+module "eip" {
   source = "git::https://github.com/nitinda/terraform-module-aws-eip.git?ref=master"
 
-  allocation_id = var.allocation_id
-  subnet_id     = var.subnet_id
-  tags          = {
+  vpc                       = true
+  network_interface         = "${aws_network_interface.multi-ip.id}"
+  associate_with_private_ip = "10.0.0.10"
+  tags                      = {
     Environment = "prod"
     Project     = "POC"
   }
@@ -62,12 +63,11 @@ module "vpc_nat_gateway" {
 ```
 
 ```tf
-module "vpc_nat_gateway" {
+module "eip" {
   source = "git::https://github.com/nitinda/terraform-module-aws-eip.git?ref=master"
 
-  allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public.id
-  tags          = {
+  vpc  = true
+  tags = {
     Environment = "prod"
     Project     = "POC"
   }
@@ -75,6 +75,19 @@ module "vpc_nat_gateway" {
 
 ```
 
+```tf
+module "eip" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-eip.git?ref=master"
+
+  instance = aws_instance.web.id
+  vpc      = true
+  tags     = {
+    Environment = "prod"
+    Project     = "POC"
+  }
+}
+
+```
 
 ---
 
