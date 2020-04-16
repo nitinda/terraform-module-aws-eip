@@ -6,7 +6,7 @@ _Terraform module for_ **_AWS Elastic IP_**
 ---
 
 ![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
-
+> **_This is a stable example. It should successfully build out of the box_**
 >
 
 ---
@@ -94,14 +94,14 @@ module "eip" {
 
 _The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
-|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
-|:----|:----|-----:|:---:|
-| **_vpc_** | _Boolean if the EIP is in a VPC or not_ | _bool_ | **_Optional <br/> (Default - true)_** |
-| **_instance_** | _EC2 instance ID_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_network\_interface_** | _Network interface ID to associate with_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_associate\_with\_private\_ip_** | _A user specified primary or secondary private <br/> IP address to associate with the Elastic IP address_ | _string_ | **_Optional <br/> (Default - null)_** |
-| **_public\_ipv4\_pool_** | _EC2 IPv4 address pool identifier or amazon_ | _string_ | **_Optional <br/> (Default - amazon)_** |
-| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Required_** |
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** | **_Default Value_** |
+|:----|:----|-----:|:---:|:---:|
+| **_vpc_** | _Boolean if the EIP is in a VPC or not_ | _bool_ | **_Optional_** | **_true_** |
+| **_instance_** | _EC2 instance ID_ | _string_ | **_Optional_** | **_null_** |
+| **_network\_interface_** | _Network interface ID to associate with_ | _string_ | **_Optional_** | **_null_** |
+| **_associate\_with\_private\_ip_** | _A user specified primary or secondary private <br/> IP address to associate with the Elastic IP address_ | _string_ | **_Optional_** | **_null_** |
+| **_public\_ipv4\_pool_** | _EC2 IPv4 address pool identifier or amazon_ | _string_ | **_Optional_** | **_amazon_** |
+| **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional_** | **_{}_** |
 
 
 ---
